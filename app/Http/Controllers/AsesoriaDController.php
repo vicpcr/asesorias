@@ -4,14 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class AsesoriaController extends Controller
+class AsesoriaDController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('asesorias.index');
+        return view('asesoriasD.index');
     }
 
     /**
@@ -19,7 +19,7 @@ class AsesoriaController extends Controller
      */
     public function create()
     {
-        return view('asesorias.create');
+        //
     }
 
     /**

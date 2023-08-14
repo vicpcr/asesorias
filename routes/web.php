@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AsesoriaController;
+use App\Http\Controllers\AsesoriaDController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,3 +24,5 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('/asesorias', AsesoriaController::class);
+
+Route::resource('/asesoriasD', AsesoriaDController::class);
