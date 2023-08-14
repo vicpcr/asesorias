@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AsesoriaController;
 use App\Http\Controllers\AsesoriaDController;
+use App\Http\Controllers\AsignaturaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,3 +27,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('/asesorias', AsesoriaController::class);
 
 Route::resource('/asesoriasD', AsesoriaDController::class);
+
+Route::resource('/asignaturas', AsignaturaController::class);
