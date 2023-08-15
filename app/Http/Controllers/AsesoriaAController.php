@@ -2,19 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Asesoria;
-use App\Models\Carrera;
 use Illuminate\Http\Request;
 
-class AsesoriaDController extends Controller
+class AsesoriaAController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $asesorias = Asesoria::where('estatus', 'PENDIENTE')->get();
-        return view('asesoriasD.index', ['asesorias' => $asesorias]);
+        return view('asesoriasA.index');
     }
 
     /**

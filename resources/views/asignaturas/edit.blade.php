@@ -1,13 +1,13 @@
 @extends('layouts.template')
 
-@section('title', 'Nueva Asignatura - UTCAM')
+@section('title', 'Editar Asignatura - UTCAM')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Nueva Asignatura</div>
+                <div class="card-header">Editar  Asignatura</div>
 
                 @if ($errors->any())
 

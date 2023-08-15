@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AsesoriaAController;
 use App\Http\Controllers\AsesoriaController;
 use App\Http\Controllers\AsesoriaDController;
 use App\Http\Controllers\AsignaturaController;
@@ -28,4 +29,7 @@ Route::resource('/asesorias', AsesoriaController::class);
 
 Route::resource('/asesoriasD', AsesoriaDController::class);
 
+Route::resource('/asesoriasA', AsesoriaAController::class);
+
 Route::resource('/asignaturas', AsignaturaController::class);
+

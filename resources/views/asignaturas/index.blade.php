@@ -35,13 +35,13 @@
                             <tbody>
                                 @foreach ($asignaturas as $asignatura)
                                 <tr>
-                                    <td>{{ $asignatura->id }}</td>
+                                    <td>{{ $loop->iteration }}</td>
                                     <td>{{ $asignatura->nombre }}</td>
                                     <td>{{ $asignatura->carrera->nombre }}</td>
                                     <td>{{ $asignatura->cuatrimestre }}</td>
                                     <td><a href="{{ route('asignaturas.edit', $asignatura->id) }}" class="btn btn-success btn-sm">Editar</a></td>
                                     <td>
-                                        <form action="{{ route('asignaturas.destroy', $asignatura->id) }}" method="post">
+                                        <form action="{{ route('asignaturas.destroy', $asignatura->id) }}" method="post" onsubmit="return confirm('¿Desea eliminar la asesoria?')">
                                             @csrf
                                             @method("DELETE")
                                             <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>

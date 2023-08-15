@@ -15,6 +15,9 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+    <!-- LOGO -->
+    <link rel="icon" href=" {{ asset('img/logo.ico') }} ">
 </head>
 <body>
     <div id="app">

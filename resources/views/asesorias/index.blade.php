@@ -5,7 +5,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header text-center">Asesorias Solicitadas - Alumno</div>
 
@@ -25,31 +25,37 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Matricula</th>
+                                    <th>Carrera</th>
                                     <th>Cuatrimestre</th>
                                     <th>Asignatura</th>
+                                    <th>Unidad</th>
                                     <th>Asesor</th>
                                     <th>Fecha</th>
-                                    <th>Unidad</th>
                                     <th>Estatus</th>
-                                    <th>Carrera</th>
-                                    <th></th>
                                     <th></th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($asesorias as $asesoria)
                                 <tr>
-                                    <td>1</td>
-                                    <td>4220010204</td>
-                                    <td>9</td>
-                                    <td>Extracción del conocimiento de bases de datos</td>
-                                    <td>Ing. Rosa Lopez Soto</td>
-                                    <td>14-08-2023-11:00</td>
-                                    <td>4</td>
-                                    <td>Pendiente</td>
-                                    <td>Ing. en DyGS</td>
-                                    <td><a href="" class="btn btn-success btn-sm">Editar</a></td>
-                                    <td><a href="" class="btn btn-danger btn-sm">Eliminar</a></td>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $asesoria->matricula }}</td>
+                                    <td>{{ $asesoria->carrera->nombre }}</td>
+                                    <td>{{ $asesoria->cuatrimestre }}</td>
+                                    <td>{{ $asesoria->asignatura }}</td>
+                                    <td>{{ $asesoria->unidad }}</td>
+                                    <td>{{ $asesoria->asesor }}</td>
+                                    <td>{{ $asesoria->fecha }}</td>
+                                    <td>{{ $asesoria->estatus }}</td>
+                                    <td>
+                                        <form action="{{ route('asesorias.destroy', $asesoria->id) }}" method="post" onsubmit="return confirm('¿Desea cancelar la asesoria?')">
+                                            @csrf
+                                            @method("DELETE")
+                                            <button type="submit" class="btn btn-danger btb-sm">Cancelar</button>
+                                        </form>
+                                    </td>
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

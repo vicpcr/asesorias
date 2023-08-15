@@ -13,6 +13,9 @@
     
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+    <!-- LOGO -->
+    <link rel="icon" href=" {{ asset('img/logo.ico') }} ">
 </head>
 <body>
     <!-- Navbar -->
@@ -35,8 +38,12 @@
                         <a class="nav-link active" aria-current="page" href="{{ route('asesoriasD.index') }}">Asesorias Docentes</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{{ route('asesoriasA.index') }}">Asesorias Aceptadas</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{{ route('asignaturas.index') }}">Asignaturas</a>
                     </li>
+                    
                 </ul>
 
                 <!-- Right Side Of Navbar -->

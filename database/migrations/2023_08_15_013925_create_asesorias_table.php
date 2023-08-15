@@ -14,18 +14,18 @@ return new class extends Migration
         Schema::create('asesorias', function (Blueprint $table) {
             $table->id();
             $table->string('matricula', 10);
+            $table->unsignedBigInteger('carrera_id');
             $table->string('cuatrimestre', 50);
-            $table->string('id_asignatura', 50);
-            $table->string('nom_asesor', 50);
-            $table->date('fecha');
+            $table->string('asignatura', 50);
             $table->string('unidad', 50);
+            $table->string('asesor', 50);
+            $table->date('fecha');
             $table->string('alum_rep', 50)->nullable();
             $table->string('asistencia', 50)->nullable();
             $table->string('resultado', 255)->nullable();
             $table->string('tipo', 50)->nullable();
             $table->string('observaciones', 255)->nullable();
             $table->string('estatus', 50)->nullable();
-            $table->unsignedBigInteger('carrera_id');
             $table->timestamps();
 
             $table->foreign('carrera_id')->references('id')->on('carreras');
