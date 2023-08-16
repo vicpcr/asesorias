@@ -3,6 +3,7 @@
 use App\Http\Controllers\AsesoriaAController;
 use App\Http\Controllers\AsesoriaController;
 use App\Http\Controllers\AsesoriaDController;
+use App\Http\Controllers\AsesoriasCController;
 use App\Http\Controllers\AsignaturaController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,5 +32,8 @@ Route::resource('/asesoriasD', AsesoriaDController::class);
 
 Route::resource('/asesoriasA', AsesoriaAController::class);
 
+Route::resource('/asesoriasC', AsesoriasCController::class);
+
 Route::resource('/asignaturas', AsignaturaController::class);
+
 

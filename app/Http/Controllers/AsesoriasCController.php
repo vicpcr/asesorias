@@ -6,15 +6,15 @@ use App\Models\Asesoria;
 use App\Models\Carrera;
 use Illuminate\Http\Request;
 
-class AsesoriaDController extends Controller
+class AsesoriasCController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $asesorias = Asesoria::where('estatus', 'PENDIENTE')->get();
-        return view('asesoriasD.index', ['asesorias' => $asesorias]);
+        $asesorias = Asesoria::where('estatus', 'CONCLUIDA')->get();
+        return view('asesoriasC.index', ['asesorias' => $asesorias]);
     }
 
     /**
@@ -22,7 +22,7 @@ class AsesoriaDController extends Controller
      */
     public function create()
     {
-        return view('asesoriasD.create', ['carreras' => Carrera::all()]);
+        //
     }
 
     /**
@@ -46,8 +46,7 @@ class AsesoriaDController extends Controller
      */
     public function edit(string $id)
     {
-        $asesoria = Asesoria::find($id);
-        return view('asesoriasD.edit', ['asesoria' => $asesoria, 'carreras' => Carrera::all()]);
+        //
     }
 
     /**
@@ -55,18 +54,7 @@ class AsesoriaDController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        
-        $request->validate([
-            'fecha' => 'required|date',
-        ]);
-        
-        
-        $asesoria = Asesoria::find($id);
-        $asesoria->fecha = $request->input('fecha');
-        $asesoria->estatus = "ACEPTADA";
-        $asesoria->save();
-
-        return view("asesoriasD.message", ['msg' => "Asesoria aceptada exitosamente."]);
+        //
     }
 
     /**

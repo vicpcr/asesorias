@@ -1,13 +1,13 @@
 @extends('layouts.template')
 
-@section('title', 'Asesorias - Docente - UTCAM')
+@section('title', 'Asesorias Concluidas - Docente - UTCAM')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header text-center">Asesorias Solicitadas - Docente</div>
+                <div class="card-header text-center">Asesorías Concluidas - Docente</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -16,23 +16,19 @@
                         </div>
                     @endif
 
-                    <a href="{{ route('asesoriasD.create') }}" class="btn btn-success btn-sm">Nueva Asesoria</a>
-                    <br>
-
                     <div class="container py-4">
                         <table class="table table-responsive">
                             <thead>
                                 <tr>
                                     <th>#</th>
                                     <th>Matricula</th>
-                                    <th>Carrera</th>
-                                    <th>Cuatrimestre</th>
-                                    <th>Asignatura</th>
-                                    <th>Unidad</th>
-                                    <th>Asesor</th>
                                     <th>Fecha</th>
+                                    <th>Alumnos reprobados</th>
+                                    <th>Asistencia</th>
+                                    <th>Resultado</th>
+                                    <th>Tipo</th>
+                                    <th>Observaciones</th>
                                     <th>Estatus</th>
-                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -40,14 +36,13 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $asesoria->matricula }}</td>
-                                    <td>{{ $asesoria->carrera->nombre }}</td>
-                                    <td>{{ $asesoria->cuatrimestre }}</td>
-                                    <td>{{ $asesoria->asignatura }}</td>
-                                    <td>{{ $asesoria->unidad }}</td>
-                                    <td>{{ $asesoria->asesor }}</td>
                                     <td>{{ $asesoria->fecha }}</td>
+                                    <td>{{ $asesoria->alum_rep }}</td>
+                                    <td>{{ $asesoria->asistencia }}</td>
+                                    <td>{{ $asesoria->resultado }}</td>
+                                    <td>{{ $asesoria->tipo }}</td>
+                                    <td>{{ $asesoria->observaciones }}</td>
                                     <td>{{ $asesoria->estatus }}</td>
-                                    <td><a href="{{ route('asesoriasD.edit', $asesoria->id) }}" class="btn btn-success btn-sm">Aceptar</a></td>
                                 </tr>
                                 @endforeach
                             </tbody>

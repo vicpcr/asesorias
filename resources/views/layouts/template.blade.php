@@ -41,6 +41,9 @@
                         <a class="nav-link active" aria-current="page" href="{{ route('asesoriasA.index') }}">Asesorias Aceptadas</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{{ route('asesoriasC.index') }}">Asesorias Concluidas</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{{ route('asignaturas.index') }}">Asignaturas</a>
                     </li>
                     
