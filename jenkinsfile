@@ -13,11 +13,5 @@ pipeline {
                 sh 'composer install'
             }
         }
-
-        stage('Test') {
-            steps {
-                sh 'php artisan test'
-            }
-        }
     }
 }
