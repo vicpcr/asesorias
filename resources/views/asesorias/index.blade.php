@@ -20,6 +20,7 @@
                     <br>
 
                     <div class="container py-4">
+                        <div class="table-responsive">
                         <table class="table table-responsive">
                             <thead>
                                 <tr>
@@ -58,6 +59,7 @@
                                 @endforeach
                             </tbody>
                         </table>
+                    </div>
                     </div>
                 </div>
             </div>
